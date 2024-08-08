@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/moon.css' rel='stylesheet'>
+    <link href="https://css.gg/css?=|sun" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="css.css">
+    
+    <title>My portfolio</title>
+</head>
+<body class="dark-mode">
+
+    <nav id="home">
+        <a href="#" class="logo">devreyes.</a>
+        <ul>
+            <li><a href="#" class="page-transition-link">Home</a></li>
+            <li><a href="#about-me" class="page-transition-link">About</a></li>
+            <li><a href="#jump-to-projects" class="page-transition-link">Projects</a></li>
+            <li><a href="#contact" class="page-transition-link">Contact</a></li>
+
+            <button id="theme-toggle">
+                <span id="theme-icon-light" class="theme-icon sun-icon"><i class="gg-sun"></i></span>
+                <span id="theme-icon-dark" class="theme-icon moon-icon"><i class="gg-moon"></i></span>
+            </button>
+        </ul>
+
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="page-transition-overlay"></div>
+    <div class="page-transition-overlay-2nd"></div>
+    
+    <div class="content-container">
+        <div class="self-portrait">
+            <div class="left-description">
+                <p id="description-part1">Entry-level React developer with experience in customer service.</p>
+                <p id="description-part2" style="display: none;">Including handling immediate requests and resolving conflicts. Capable of transforming pitched ideas into tangible results.</p>
+                <button class="toggle-btn" onclick="toggleDescription()">Read more</button>
+            </div>
+            <img src="selfportrait.webp" decoding="async"loading="lazy" width="500" alt="Self Portrait">
+            
+            <div class="right-description">Transforming ideas into results.</div>
+        </div>
+
+        <div class="socials-location-container">
+            <div class="social-icons">
+
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@andradedev" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/jessereyes_" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/jesse-reyes-59b53229b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app_" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ReyesJesse" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+
+            <div class="location">Chicago, Illinois</div>
+        </div>
+        <div class="circle"></div>
+    </div>
+    <hr class="section-divider">
+  
+    <section id="jump-to-projects" class="projects-section">
+        <div class="projects-section-container">
+            <div>
+                <h1 class="fw-bold fs-1">PROJECTS</h1>
+                <div class="underline-container">
+                    <span class="underline"></span>
+                    <span class="underline"></span>
+                </div>
+            </div>
+            <div class="projects-container">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h3>Nike Clone</h3>
+                        <p>
+                            A simple Nike project featuring the Jordan 1s along with four other colorways. The website includes interactive buttons that change the background to match the corresponding shoe color. The project was developed using HTML, CSS, and JavaScript. 
+                        </p>
+                        <a href="https://reyesjesse.github.io/NikeOne/" class="btn view-project" onclick="openNewWindow(event)" >
+                            View Project
+                            <span style="margin-left: 5px;"></span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/ReyesJesse/NikeOne.git" class="btn view-code" onclick="openNewWindow(event)">
+                            View Code
+                            <span style="margin-left: 5px;"></span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <img src="myprojects/nike.webp" decoding="async"loading="lazy" width="600px" title="Nike Project"alt="Nike Project">
+                </div>
+            </div>
+            <div class="projects-container">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h3>Lone Pirates</h3>
+                        <p>
+                            A straightforward website designed to showcase my former boss's merchandise. The project is fully responsive, adapting seamlessly to mobile devices, and features an active hamburger menu. Additionally, it includes a map for directions to the establishment, contact details, and customer reviews.
+                        </p>
+                        <a href="https://lonepiratesreyes.netlify.app" class="btn view-project" onclick="openNewWindow(event)" >
+                            View Project
+                            <span style="margin-left: 5px;"></span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/ReyesJesse/Lone-Pirates-Game" class="btn view-code" onclick="openNewWindow(event)">
+                            View Code
+                            <span style="margin-left: 5px;"></span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <img src="myprojects/lonePirates.webp" loading="lazy"width="600px" title="Dreamline Project"alt="Dreamline Project">
+                </div>
+            </div>
+            <div class="projects-container">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h3>Portfolio</h3>
+                        <p>
+                            This project was designed to highlight soft transitions, responsiveness, and sleek UI design. It adapts well to various viewports, including tablet devices. Additionally, it features a section about myself, outlines my skills, and includes a recap of 2024 to showcase my hobbies outside of coding.
+                        </p>
+                        <a href="" class="btn view-project" onclick="openNewWindow(event)" >
+                            View Project
+                            <span style="margin-left: 5px;"></span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="" class="btn view-code" onclick="openNewWindow(event)">
+                            View Code
+                            <span style="margin-left: 5px;"></span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <img src="myprojects/portfolio.webp"  decoding="async"loading="lazy"width="600px" title="portfolio Project"alt="Portfolio Project">
+                </div>
+            </div>
+            <div class="projects-container">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h3>Live Clock </h3>
+                        <p>
+                            One of my earliest projects, this work showcases my JavaScript skills and UI design capabilities. The project includes features such as background changes and a button that plays soft rain  in the background.
+                        </p>
+                        <a href="https://reyesliveclock.netlify.app" class="btn view-project" onclick="openNewWindow(event)" >
+                            View Project
+                            <span style="margin-left: 5px;"></span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/ReyesJesse/LiveClock" class="btn view-code" onclick="openNewWindow(event)">
+                            View Code
+                            <span style="margin-left: 5px;"></span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <img src="myprojects/clock.webp" decoding="async"loading="lazy" width="600px" title="Clock Project" alt="Nike Project">
+                </div>
+            </div>
+            <div class="projects-container">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h3>All Projects</h3>
+                        <p></p>
+                        <a href="https://github.com/ReyesJesse?tab=repositories" class="btn view-project" onclick="openNewWindow(event)" >
+                            All Projects
+                            <span style="margin-left: 5px;"></span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="" class="btn view-code" onclick="openNewWindow(event)">
+                            View Code
+                            <span style="margin-left: 5px;"></span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <img src="allprojects.webp" decoding="async"loading="lazy" width="600px" alt="All Project">
+                </div>
+            </div>
+    </section> 
+    <hr class="section-divider">
+    <section id="about-me">
+        <div class="about-left">
+          <h1>About Me</h1>
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+          <img src="cartoonme1.webp" decoding="async"loading="lazy"alt="Your Image" class="profile-img">
+          <p class="about-description">
+            Dedicated professional with a background in sales and customer service, having worked as a sales representative since 2017. I hold an Associate's degree in Science, which has equipped me with a solid foundation for problem-solving and analytical thinking.
+
+            Throughout my career, I've worked in various roles where I was responsible for resolving customer billing issues and utilizing system codes to find effective solutions. My experience has honed my skills in communication, customer service, and technical troubleshooting.
+
+            On a personal note, I enjoy traveling, boxing, and participating in game tournament events. My interests not only provide a balanced lifestyle but also contribute to my problem-solving abilities and creative thinking.
+          </p>
+        </div>
+        <div class="skills-right">
+          <div class="skills-icons">
+            <div class="skill-card">
+              <i class="fab fa-github skill-icon" title="GitHub"></i>
+              <span class="skill-name">GitHub</span>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-bootstrap skill-icon" title="Bootstrap"></i>
+              <span class="skill-name">Bootstrap</span>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-js-square skill-icon" title="JavaScript"></i>
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-html5 skill-icon" title="HTML5"></i>
+              <span class="skill-name">HTML5</span>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-css3-alt skill-icon" title="CSS3"></i>
+              <span class="skill-name">CSS3</span>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-node-js skill-icon" title="Node.js"></i>
+              <span class="skill-name">Node.js</span>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-react skill-icon" title="React"></i>
+              <span class="skill-name">React</span>
+            </div>
+            <div class="skill-card">
+                <img src="tailwind.webp" alt="GitHub Icon" class="skill-icon" title="Tailwind">
+                <span class="skill-name">Tailwind</span>
+            </div>    
+            <div class="skill-card">
+                <img src="angular.webp" alt="GitHub Icon" class="skill-icon" title="Angular">
+                <span class="skill-name">Angular</span>
+            </div>     
+        </div>
+      </section>
+      <section class="recap">
+        <h1>My 2024 Recap</h1>
+      
+        <div class="gallery">
+            <div class="image-container">
+                <img src="hobbies/image1.webp" alt="Hobby 1">
+                <p class="image-description">This annual event, known as Combo Breaker, is something that i like to attend as frequently as possible since fighting games is something i look forward to. </p>
+            </div>
+            <div class="image-container">
+                <img src="hobbies/image2.webp" alt="Hobby 2">
+                <p class="image-description">Another picture of combo breaker.</p>
+            </div>
+            <div class="image-container">
+                <img src="hobbies/image3.webp" alt="Hobby 3">
+                <p class="image-description"> Picture of the beach that i visited in Europe.
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="hobbies/image4.webp" alt="Hobby 4">
+                <p class="image-description">Superman boat lol</p>
+            </div>
+            <div class="image-container">
+                <img src="hobbies/image5.webp" alt="Hobby 5">
+                <p class="image-description">Greece</p>
+            </div>
+            <div class="image-container">
+                <img src="hobbies/image6.webp" alt="Hobby 6">
+                <p class="image-description"></p>
+            </div>
+            <div class="image-container">
+                <img src="hobbies/image7.webp" alt="Hobby 7">
+                <p class="image-description"></p>
+            </div>
+            <div class="image-container">
+                <img src="hobbies/image8.webp" alt="Hobby 8">
+                <p class="image-description"></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div id="contact" class="footer-left">
+            <h3><a href="#home">Back to the top</a></h3>
+            <h3><a href="#about-me">About Me</a></h3>
+            <h3><a href="#jump-to-projects"">Projects</a></h3>
+        </div>
+        <div class="footer-middle">
+            <h2>Jesse</h2>
+            <h3>Reyes</h3>
+            <div class="social-icons">
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@andradedev" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/jessereyes_" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h3>Contact Info</h3>
+            <ul>
+                <li>Phone Number: <a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 (708) 391-7574</a></li>
+                <li>Email: <a href="mailto:jesse.reyes.andrade@gmail.com">jesse.reyes.andrade@gmail.com</a></li>
+            </ul>
+            <button onclick="location.href='mailto:jesse.reyes.andrade@gmail.com'">Hire Me</button>
+        </div>
+    </footer>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

@@ -1,0 +1,1735 @@
+/* General styles for both modes */
+body {
+    overflow: visible; /* Ensure no unwanted overflow properties */
+    width: 100%; /* Ensure full width */
+    height: 100%; /* Ensure full height */
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+
+}
+
+
+/* Dark mode specific styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode .projects-section .underline {
+   background-color: white;
+}
+
+/* CSS */
+.smooth-scroll-container {
+    overflow-y: scroll;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.smooth-scroll-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+body.dark-mode nav ul li a {
+    color: white;
+}
+
+nav {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 999;
+}
+
+nav .logo {
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+    color: inherit;
+    animation: fadeIn 1s ease-in-out;
+
+}
+
+nav ul {
+    font-weight: 800;
+    z-index: 12;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+    margin-left: -10px;
+}
+
+nav ul li {
+    margin-right: 25px;
+    font-size: 30px;
+    position: relative;
+}
+
+nav ul li:last-child {
+    margin-right: 0 auto;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+/* Dark mode hamburger menu styles */
+body.dark-mode .hamburger-menu span {
+    background-color: white;
+    transition: background-color 0.3s ease; /* Added transition for background-color */
+}
+
+
+.hamburger-menu {
+    display: block;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: inherit;
+    border-radius: 9px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+    background: black;
+}
+
+.hamburger-menu span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger-menu span:nth-child(2),
+.hamburger-menu span:nth-child(3) {
+    top: 10px;
+}
+
+.hamburger-menu span:nth-child(3) {
+    top: 20px;
+}
+
+.hamburger-menu.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+nav ul li {
+    position: relative;
+}
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease; /* Added color transition */
+}
+nav ul li::after,
+nav ul li::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: inherit;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav ul li::after {
+    background-color: inherit;
+    
+}
+
+nav ul li:hover::after,
+nav ul li:hover::before {
+    width: calc(100% - 40px);
+    left: 20px;
+    
+}
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    padding: 20px;
+    animation: fadeIn 3s ease-in-out; /* Reduced animation duration */
+
+
+}
+
+.self-portrait {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+    z-index: 10;
+    filter: grayscale(100%);
+}
+
+.left-description,
+.right-description {
+    width: 35%;
+}
+
+.left-description {
+    text-align: left;
+    margin-top: -15em;
+    font-weight: 500;
+
+}
+.left-description button{
+    border: 1px solid red;
+
+}
+
+.right-description {
+    position: relative;
+    right: 1em;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: left;
+}
+
+.self-portrait img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    z-index: 2;
+    
+}
+
+.socials-location-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: -10rem;
+}
+
+.social-icons {
+    text-align: left;
+    z-index: 20;
+}
+
+.location {
+    font-weight: 600;
+    text-align: right;
+}
+
+.social-icons a {
+    color: white;
+    margin-right: 15px;
+    font-size: 24px;
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent element */
+    transition: transform 0.2s ease-out, color 0.2s ease-out; /* Smooth transition for transform and color */
+   
+  }
+  
+  
+  .social-icons a:nth-child(1):hover {
+  /* Hover color for the first icon */
+  color: #009de6; /* Lighter blue color for hover effect */
+  transform: translateY(-3px); /* Lifts the icon up by 3 pixels on hover */
+}
+
+  .social-icons a:nth-child(2):hover {
+    /* Hover color for the second icon */
+    color: #fd335b; /* TikTok brand color for hover effect */
+    transform: translateY(-3px); /* Lifts the icon up by 3 pixels on hover */
+  }
+  
+  .social-icons a:nth-child(3):hover {
+    /* Adjusted color for hover effect */
+    background: linear-gradient(45deg, #8A3AB6, #E53571);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateY(-3px); /* Lifts the icon up by 3 pixels on hover */
+  }
+  .social-icons a:nth-child(4):hover {
+    /* Hover color for the fourth icon */
+    color: #00a8e8; /* LinkedIn brand color for hover effect */
+    transform: translateY(-3px); /* Lifts the icon up by 3 pixels on hover */
+  }
+  
+  .social-icons a:nth-child(5):hover {
+    /* Hover color for the fifth icon */
+    color: #6e5494; /* GitHub brand color for hover effect */
+    transform: translateY(-3px); /* Lifts the icon up by 3 pixels on hover */
+  }
+  
+.circle {
+    width: 750px;
+    height: 750px;
+    /* background: radial-gradient(circle, rgb(255, 213, 0), rgb(242, 255, 0)); */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -10;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Add shadow */
+    z-index: 1;
+}
+
+
+body.dark-mode .circle {
+    /* background: radial-gradient(circle, rgb(0, 98, 255), rgb(0, 34, 102)); */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 1); /* Dark mode shadow */
+    /* background-image: url(/ge2pfh8r14v31.webp); */
+}
+
+button[onclick="toggleDescription()"] {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[onclick="toggleDescription()"]:hover {
+    background-color: #005cb2;
+    
+}
+.section-divider {
+    border: none; /* Remove default border */
+    border-top: 1px solid #46434380; /* Add a 1px solid border on top */
+    margin: auto; /* Adjust margin as needed */
+    width: 50%;
+    margin-top: 0px;
+}
+#theme-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.theme-icon {
+    position: absolute;
+    font-size: 24px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+}
+
+#theme-icon-light i.gg-sun,
+#theme-icon-dark i.gg-moon {
+    color: #f8ca49;
+    position: relative;
+}
+
+#theme-icon-dark i.gg-moon {
+    color: #3498db;
+}
+
+.dark-mode #theme-icon-dark,
+:not(.dark-mode) #theme-icon-light {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-out {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+
+body.dark-mode .hamburger-menu.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+body.dark-mode .hamburger-menu.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+.projects-section h1 {
+    margin-left: -10rem;
+    font-size: 3rem;
+    margin-bottom: 30px; /* Add space between heading and projects */
+    position: relative; /* Ensure the h1 is positioned relative */
+}
+
+.projects-section::before {
+    content: "";
+    position: fixed; /* Changed from absolute to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(backgroundcopy.webp);
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%); /* Initially grayscale */
+    opacity: 0.50; /* Adjust opacity to make the background barely visible */
+    z-index: -1; /* Ensure the pseudo-element is behind the content */
+}
+
+body.dark-mode .projects-section::before {
+    filter: grayscale(100%) invert(100%); /* Invert and darken the image in dark mode */
+}
+
+body.light-mode .projects-section::before {
+    filter: grayscale(100%); /* Keep the image normal in light mode */
+}
+
+.underline-container {
+    margin-left: -15rem;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.projects-section .underline {
+    width: 0; /* Start with a width of 0 */
+    height: 3px;
+    background-color: #000;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+    opacity: 0;
+    transition: width 4s ease, opacity 0.5s ease; /* Smooth transition for width and opacity */
+}
+
+.projects-section .underline:nth-child(1) {
+    position: relative;
+    top: 5px;
+    left: 3rem;
+}
+
+.projects-section .underline:nth-child(2) {
+    position: relative;
+    top: -20px;
+    left: -4rem;
+}
+
+.projects-section.show-underline .underline {
+    opacity: 1; /* Show the underline */
+    width: 100px; /* Set the final width to reveal the underline */
+}
+
+.projects-section.show-underline .underline:nth-child(1) {
+    width: 280px; /* Set the final width for the first underline */
+}
+
+.projects-section.show-underline .underline:nth-child(2) {
+    width: 280px; /* Set the final width for the second underline */
+}
+
+/* Project section container styling */
+.projects-section .projects-section-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+
+/* Initial state for project items */
+.projects-section-container > div {
+    position: relative;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 3s ease-out, transform 3s ease-out;
+}
+
+/* Slide-in animation trigger */
+.projects-section-container > div.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Specific item adjustments */
+.projects-section-container > div:nth-child(2) {
+    width: 500px;
+    left: -5rem;
+    z-index: 10;
+    height: 600px; /* Set the desired height */
+    max-height: 600px; /* Ensure the height does not exceed this value */
+    overflow: hidden; /* Hide any overflowing content */
+
+}
+.projects-section-container > div:nth-child(2) img {
+    width: 70%; /* Increase the width of the image */
+    height: auto; /* Maintain the aspect ratio of the image */
+    display: block; /* Ensure the image is a block-level element */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.projects-section-container > div:nth-child(3) {
+    width: 400px;
+    left: 10rem;
+}
+
+.projects-section-container > div:nth-child(4) {
+    width: 450px;
+    left: -10rem;
+    top: -25rem;
+    
+
+}
+
+.projects-section-container > div:nth-child(5) {
+    top: -5rem;
+    width: 500px; /* Increase the width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    left: 0rem;
+    box-sizing: border-box;
+    max-height: 90%; /* Ensure the height does not exceed this value */
+    overflow: hidden; /* Hide any overflowing content */
+    
+}
+
+
+.projects-section-container > div:nth-child(5) img {
+    width: 60%; /* Increase the width of the image */
+    height: auto; /* Maintain the aspect ratio of the image */
+    display: block; /* Ensure the image is a block-level element */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.projects-section-container > div:nth-child(6) {
+    left: 13rem;
+    width: 400px; /* Set the width of the container */
+    height: 400px; /* Set the height of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    position: relative; /* Ensure positioning context for absolute positioning */
+    overflow: hidden; /* Hide any overflowing content */
+top: -1.5rem;
+
+}
+.projects-section-container > div:nth-child(6) img {
+    width: 50%; /* Increase the width of the image */
+    height: auto; /* Maintain the aspect ratio of the image */
+    display: block; /* Ensure the image is a block-level element */
+    margin: 0 auto; /* Center the image horizontally */
+}
+@media only screen and (min-width: 1200px) and (max-width: 1900px) {
+    .projects-section-container > div:nth-child(6) {
+        position: relative;
+        top: -1rem;
+    }
+    .projects-section-container > div:nth-child(5) {
+        top: -6rem;
+    }
+    .section-divider {
+        position: relative;
+top: 1rem;        
+    }
+}
+
+.project-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 8px; /* Add border radius */
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0); /* Gradient background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 20px; /* Add padding around the image */
+}
+
+.project-item img {
+    width: 100%;
+    border-radius: 8px 0 8px 0; /* Rounded top corners */
+    transition: transform 1s ease, opacity 1s ease, filter 1s ease; /* Added filter transition */
+    filter: grayscale(100%); /* Make the image grayscale by default */
+}
+
+.project-item:hover img {
+    transform: scale(1.05); /* Zoom effect */
+    filter: grayscale(0%); /* Remove grayscale filter on hover */
+    animation: pulse 0.4s infinite alternate; /* Pulse animation */
+}
+
+@keyframes pulse {
+    to {
+        transform: scale(1); /* Scale up */
+    }
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    font-size: 1.5rem; /* Adjust title size */
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #181a1d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0039b3;
+}
+
+.project-item:nth-child(odd) {
+    transform: translateY(30px); /* Adjust vertical position of odd items */
+}
+
+.project-item:nth-child(even) {
+    transform: translateY(-30px); /* Adjust vertical position of even items */
+}
+
+body.dark-mode {
+    
+    .hamburger-menu span {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: inherit;
+        border-radius: 9px;
+        transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+        background: white;
+    }
+    .footer-right ul li a {
+        color: #ffffff; /* White text color */
+        text-decoration: none; /* Remove underline */
+        transition: color 0.3s; /* Smooth transition for text color */
+      }
+      #contact a {
+        text-decoration: none;
+        color: white;
+        
+    }
+    .footer-middle::before {
+        
+        background-color: white; /* Color of the line */
+    }
+    .footer-right,.footer-left {
+        border-top: 1px solid white;
+        
+    }
+      
+    .hamburger-menu span:nth-child(1) {
+        top: 0;
+    }
+    
+    .hamburger-menu span:nth-child(2),
+    .hamburger-menu span:nth-child(3) {
+        top: 10px;
+    }
+    
+    .hamburger-menu span:nth-child(3) {
+        top: 20px;
+    }
+    
+    .hamburger-menu.open span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+    
+    .hamburger-menu.open span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.open span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+    /* Dark mode styles */
+    /* Project item styles */
+    .project-item {
+        border-color: #666; /* Darker border color */
+        background: linear-gradient(to bottom, #121212, #121212); /* Dark gradient background */
+        box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Light shadow effect */
+    }
+
+    
+    .project-item img {
+        border: 1px solid #ccccccb3;
+    }
+    /* Project info styles */
+    .project-info h3 {
+        color: #fff; /* Light title color */
+        border-color: #666; /* Darker border color */
+        padding-bottom: 5px; /* Adjust padding for dark mode */
+    }
+
+    .project-info p {
+        color: #ccc; /* Light text color for project info */
+        padding-top: 5px; /* Adjust padding for dark mode */
+    }
+
+    /* Button styles */
+    .btn {
+        background-color: #181a1d;
+        color: #fff; /* Light button text color */
+    }
+
+    .btn:hover {
+        background-color: #0039b3;
+    }
+    .line {
+        
+        background-color: white; /* Line color */
+        
+    }
+    #contact a:hover {
+        color: #a09c9c; /* Change to your desired hover color */
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition */
+    
+    }
+     
+    .footer-right ul li a:hover {
+        color: #cccccc; /* Light gray text color on hover */
+      }
+      .footer-middle {
+        border-top: 1px solid white;
+        padding-top: 20px; /* Add padding to top sections */
+    }
+    
+}
+#about-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+  
+  #about-me h1 {
+    margin-left: -10rem;
+    font-size: 3rem;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-100%) scale(0.8); /* Start off-screen with a slight scale */
+    transition: opacity 2s, transform 2s; /* Smooth transition */
+}
+
+#about-me h1.animate {
+    opacity: 1; /* End state */
+    transform: translateX(0) scale(1); /* End state with normal scale */
+    transition-delay: 1s; /* Adjust the delay as needed */
+}
+
+.line {
+    position: relative;
+    top: -2rem;
+    height: 3px;
+    background-color: black; /* Line color */
+    margin: 0.5rem 0; /* Space between lines and heading */
+    width: 0; /* Start hidden */
+    transition: width 2s; /* Smooth transition */
+    margin-top: 20px;
+    left: -10rem;
+}
+
+.line1.animate {
+    width: 60%; /* End state for the first line */
+    transition-delay: 1s; /* Adjust the delay to sync with heading animation */
+    margin-left: 5rem;
+}
+
+.line2.animate {
+    width: 50%; /* End state for the second line */
+    transition-delay: 1.5s; /* Adjust the delay to sync with heading animation */
+    margin-top: 1.5;
+    margin-left: -2rem;
+}
+
+/* Define keyframes for potential other uses */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.slideIn {
+    animation: slideIn 1s ease-out forwards;
+}
+  
+  .about-left {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .profile-img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .about-description {
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+  
+  .skills-right {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .skills-icons {
+    display: grid;
+    grid-template-columns: auto auto auto; /* 3 columns for the layout */
+    gap: 20px;
+  }
+  
+  .skill-card:nth-child(1) {
+    grid-column: 3; /* Middle column, middle row */
+  }
+  
+  .skill-card:nth-child(2) {
+    grid-column: 2; /* Rightmost column, middle row */
+  }
+  
+  .skill-card:nth-child(3) {
+    grid-column:3; /* Leftmost column, middle row */
+  }
+  .skill-card {
+    /* Your existing styles */
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  
+    /* New styles for border */
+    border: 2px solid;
+    border-image: linear-gradient(to right, rgb(0, 0, 0), rgb(25, 0, 255));
+    border-image-slice: 1;
+  }
+  .skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .skill-icon {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .skill-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .skill-card {
+    /* Your existing styles */
+    opacity: 0; /* Start with zero opacity */
+    transition: opacity 0.5s ease; /* Add a transition for opacity */
+  }
+  
+  .skill-card.show {
+    opacity: 1; /* When the 'show' class is added, change opacity to 1 */
+  }
+  
+  .skill-card img {
+    filter: grayscale(100%) brightness(0%);
+}
+.recap {
+    width: 55%;
+    margin: 0 auto; /* This centers the element horizontally */
+    text-align: center; /* This centers the text inside the element */
+}
+
+.recap .gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.recap .gallery .image-container {
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.recap .gallery .image-container img {
+    border-radius: 15px;
+    width: 180px; /* Adjusted width to accommodate borders */
+    height: 180px; /* Adjusted height to accommodate borders */
+    object-fit: cover;
+    border: 2px solid #ddd; /* Border style */
+    transition: transform 0.3s ease-in-out; /* Transition effect for hover */
+}
+
+.recap .gallery .image-container img:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+.recap .gallery .image-container .image-description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the description */
+    width: 100%; /* Occupy full width of the image container */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    text-align: center;
+    opacity: 0; /* Initially hide the description */
+    pointer-events: none; /* Disable pointer events so clicks pass through */
+    transition: opacity 0.3s ease; /* Add transition for smoother appearance */
+    z-index: 1000;
+}
+
+.recap .gallery .image-container.active .image-description {
+    opacity: 1; /* Show description when .active class is present */
+    pointer-events: auto; /* Enable pointer events to interact with description */
+}
+
+.recap .gallery .image-container.active img {
+    opacity: 0.7; /* Dim the image when description is shown */
+}
+.recap h1{
+    font-size: 3rem;
+}
+
+/* Enlarged image modal */
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+}
+
+#modal-content {
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    max-width: 900px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+    border-radius: 8px;
+}
+
+#modal-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background for close button */
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+#modal-close:hover,
+#modal-close:focus {
+    background-color: rgba(0, 0, 0, 0.8); /* Darken close button on hover */
+}
+/*footer starts here */
+footer {
+    padding: 20px;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.footer-left, .footer-middle, .footer-right {
+    display: inline-block;
+    width: 30%; /* Adjust width as needed */
+    vertical-align: top;
+}
+
+.footer-left {
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+
+#contact a {
+    text-decoration: none;
+    color: black;
+    
+}
+
+#contact a:hover {
+    color: #a09c9c; /* Change to your desired hover color */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition */
+
+}
+
+#contact i {
+    margin-right: 8px; /* Space between icon and text */
+    font-size: 18px; /* Adjust the size of the icon */
+}
+
+.footer-right {
+    text-align: center;
+    border-top: 1px solid black;
+    
+}
+.footer-right ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.footer-right ul li {
+    margin-bottom: 10px; /* Add space between list items */
+}
+
+.footer-right ul li a {
+    color: black; /* White text color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for text color */
+  }
+  
+  .footer-right ul li a:hover {
+    color: #cccccc; /* Light gray text color on hover */
+  }
+.footer-left h2, .footer-left h3, .footer-left p, .footer-left li, .footer-left button,
+.footer-middle h2, .footer-middle h3, .footer-middle p, .footer-middle li, .footer-middle button,
+.footer-right h2, .footer-right h3, .footer-right p, .footer-right li, .footer-right button {
+    font-weight: 100; /* Thin font weight */
+}
+.footer-right button {
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .footer-right button:hover {
+    background-color: #a09c9c; /* Light gray background on hover */
+    color: #333333; /* Dark gray text color on hover */
+    border-color: #333333; /* Dark gray border on hover */
+  }
+  
+  .footer-right button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.4); /* Custom focus outline */
+  }
+  
+  .footer-right button:active {
+    background-color: #292828; /* Slightly darker gray background on click */
+    border-color: #333333; /* Dark gray border on click */
+  }
+  
+.social-icons {
+    margin-top: 20px; /* Increased margin-top */
+    text-align: center; /* Center align icons horizontally */
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 15px; /* Adjust margin as needed */
+    vertical-align: middle; /* Align icons vertically */
+}
+
+.social-icons a i {
+    font-size: 24px; /* Adjust icon size as needed */
+    margin-top: 5rem;
+}
+
+.footer-middle {
+    margin-top: -2rem;
+    text-align: center; /* Center align content */
+    position: relative; /* Relative positioning for the vertical line */
+}
+
+.footer-middle h2 {
+    margin-top: 0; /* Remove default margin */
+    margin-bottom: -10px; /* Adjust margin as needed */
+    position: relative; /* Ensure position relative for z-index */
+    display: inline-block; /* Ensure inline-block for width calculation */
+}
+
+.footer-middle::before {
+    content: '';
+    position: absolute;
+    bottom: 50px; /* Adjust vertical position of the line */
+    left: 50%; /* Centered horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    width: 1px; /* Width of the line */
+    height: 60px; /* Length of the line */
+    background-color: black; /* Color of the line */
+    z-index: -1; /* Behind the content */
+}
+.page-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    display: none;
+    animation: pageTransition 1s forwards; /* Animation for first overlay */
+}
+
+.page-transition-overlay-2nd {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000; /* Higher z-index to appear above the first overlay */
+    display: none;
+    animation: pageTransition2nd 1.5s forwards; /* Animation for second overlay */
+}
+
+@keyframes pageTransition {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes pageTransition2nd {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+@media only screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .hamburger-menu {
+        display: block;
+        z-index: 12;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        z-index: 12;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        margin-left: auto;
+        top: 0;
+        animation: fadeIn .5s ease-in-out;
+    }
+ 
+    nav ul.open {
+        display: flex;
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    nav ul.transition {
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        color: black;
+    }
+
+    body.dark-mode nav ul.open {
+        display: flex;
+        max-height: 500px;
+        opacity: 1;
+        background-color: #121212;
+        box-shadow: 0px 10px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    .circle {
+        width: 300px; /* Reduced width */
+        height: 300px; /* Reduced height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .self-portrait {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .self-portrait img {
+        max-width: 70%;
+        height: auto;
+    }
+
+    .left-description,
+    .right-description {
+        width: 100%;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .right-description {
+        font-size: 24px;
+        text-align: center;
+        right: 0;
+    }
+
+    .socials-location-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 0;
+        position: relative;
+        top: 30px;
+    }
+
+    .social-icons {
+        text-align: center;
+    }
+
+    .social-icons a {
+        margin-right: 2px;
+        color: inherit;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    .location {
+        position: relative;
+        margin-right: -15px;
+        font-weight: 500;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    #theme-toggle {
+        padding: 10px;
+    }
+
+    .toggle-btn {
+        margin-top: -20px;
+    }
+
+    .projects-section h1 {
+        margin-left: 0;
+        font-size: 2rem; /* Adjust font size for mobile */
+        margin-bottom: 20px; /* Reduce bottom margin for mobile */
+    }
+   
+    .section-divider {
+        border: none; /* Remove default border */
+        border-top: 1px solid #46434380; /* Add a 1px solid border on top */
+        margin-top: 4rem; /* Adjust margin as needed */
+        width: 50%;
+    }
+   
+
+
+    /* Adjust specific item styles for smaller screens */
+    .projects-section-container > div:nth-child(2) {
+        width: 100%;
+        left: 0;
+        margin-bottom: 20px;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .projects-section-container > div:nth-child(2) img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+       /* Adjust specific item styles for smaller screens */
+       .projects-section-container > div:nth-child(3) {
+        width: 100%;
+        left: 0;
+        margin-bottom: 20px;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .projects-section-container > div:nth-child(3) img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+       /* Adjust specific item styles for smaller screens */
+       .projects-section-container > div:nth-child(4) {
+        position: relative;
+        top: 0;
+        width: 100%;
+        left: 0;
+        margin-bottom: 20px;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .projects-section-container > div:nth-child(4) img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        
+    }
+         /* Adjust specific item styles for smaller screens */
+         .projects-section-container > div:nth-child(5) {
+            position: relative;
+            top: 0;
+            width: 100%;
+            left: 0;
+            margin-bottom: 20px;
+            height: auto;
+            max-height: none;
+            overflow: visible;
+        }
+    
+        .projects-section-container > div:nth-child(5) img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            
+        }
+             /* Adjust specific item styles for smaller screens */
+       .projects-section-container > div:nth-child(6) {
+        position: relative;
+        top: 0;
+        width: 100%;
+        left: 0;
+        margin-bottom: 20px;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .projects-section-container > div:nth-child(6) img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        
+    }
+       /* Adjust styles for each project item individually */
+       .projects-section-container > div:nth-child(2) img,
+       .projects-section-container > div:nth-child(3) img,
+       .projects-section-container > div:nth-child(4) img,
+       .projects-section-container > div:nth-child(5) img,
+       .projects-section-container > div:nth-child(6) img {
+           width: 80%; /* Adjust the width as needed */
+           /* Other styles specific to smaller screens */
+       }
+   
+    .project-item p {
+        display: none;
+    }
+    .project-item  {
+        text-align: center;
+        position: relative;
+    }
+    .underline-container {
+        margin-left: -5rem;
+        justify-content: center; /* Center the underline container */
+    }
+    .projects-section{
+        padding: 30px;
+    }
+    .project-item .btn{
+        font-size: 15px; /* Adjust the font size as needed */
+        padding: 5px 10px; /* Adjust the padding as needed */
+    }
+    
+    #about-me {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items vertically */
+        text-align: center; /* Center text horizontally */
+
+      }
+      #about-me h1 {
+        text-align: center; /* Ensure text alignment is centered */
+    }
+    
+      .line {
+        display: none; /* Hide lines on small screens */
+      }
+    
+      .about-left,
+      .skills-right {
+        margin: 0; /* Remove margins for left and right sections */
+        max-width: 100%; /* Full width for images and skill cards */
+      }
+    
+      .profile-img {
+        margin-bottom: 10px; /* Adjust margin for image */
+      }
+    
+      .skills-icons {
+        grid-template-columns: 1fr; /* Single column layout for skill cards */
+        gap: 10px; /* Reduce gap between skill cards */
+      }
+    
+      .skill-card {
+        padding: 10px; /* Adjust padding for skill cards */
+        border: none; /* Remove border for skill cards */
+        box-shadow: none; /* Remove box shadow for skill cards */
+        opacity: 1; /* Show skill cards without animation */
+      }
+    
+      .skill-card.show {
+        opacity: 1; /* Ensure skill cards are visible */
+      }
+    
+      .skill-icon {
+        font-size: 2.5em; /* Decrease font size for skill icons */
+        margin-bottom: 5px; /* Adjust margin for skill icons */
+      }
+    
+      .skill-name {
+        font-size: 1em; /* Decrease font size for skill names */
+      }
+      #modal-content {
+        width: 90%;
+    }
+    
+    /* Footer styles for smaller screens */
+footer {
+    padding: 20px;
+    text-align: center;
+    margin-top: 5rem; /* Adjust margin-top as needed for smaller screens */
+}
+.footer-left{
+    padding-bottom: 5px;
+}
+.footer-left, .footer-middle, .footer-right {
+    
+    display: block;
+    width: 100%;
+    margin-bottom: 40px; /* Add space between sections */
+}
+
+.footer-left, .footer-middle {
+    border-top: 1px solid black;
+    padding-top: 20px; /* Add padding to top sections */
+}
+
+.footer-left h2, .footer-left h3, .footer-left p,
+.footer-middle h2, .footer-middle h3, .footer-middle p,
+.footer-right h2, .footer-right h3, .footer-right p {
+    font-weight: 100; /* Thin font weight */
+    
+}
+
+
+.footer-right ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    
+}
+
+.footer-right ul li {
+    margin-bottom: 10px; /* Add space between list items */
+    
+}
+
+.footer-right ul li a {
+    color:black; /* Change text color to white */
+    text-decoration: none; /* Remove underline */
+    
+}
+
+.footer-right ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.social-icons {
+    margin-top: 20px; /* Increased margin-top */
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px; /* Adjust margin as needed */
+    vertical-align: middle; /* Align icons vertically */
+}
+
+.social-icons a i {
+    font-size: 24px; /* Adjust icon size as needed */
+}
+
+.footer-middle::before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 1px; /* Width of the line */
+    height: 60px; /* Length of the line */
+    background-color: black; /* Color of the line */
+}
+.recap {
+    width: 100%;
+    margin: 0 auto; /* This centers the element horizontally */
+    text-align: center; /* This centers the text inside the element */
+
+}
+#about-me h1 {
+    opacity: 1; /* Ensure the heading is visible */
+    transform: none; /* Remove transform */
+    margin-left: 0; /* Reset margin */
+    font-size: 3rem; /* Adjust font size if needed */
+    transition: none; /* Remove transition */
+}
+
+#about-me h1.animate {
+    opacity: 1; /* Ensure animation state for larger screens does not apply */
+    transform: none; /* Remove transform */
+    transition: none; /* Remove transition */
+}
+
+}
+@media only screen and (min-width: 768.1px) and (max-width: 1200px) {
+   
+    .projects-section h1 {
+        margin-left: 0;
+        font-size: 2rem; /* Adjust font size for mobile */
+        margin-bottom: 20px; /* Reduce bottom margin for mobile */
+    }
+   
+    .section-divider {
+        border: none; /* Remove default border */
+        border-top: 1px solid #46434380; /* Add a 1px solid border on top */
+        margin-top: 2rem; /* Adjust margin as needed */
+        width: 50%;
+    }
+   
+    /* Adjust specific item styles for smaller screens */
+    .projects-section-container > div:nth-child(2) {
+        width: 100%;
+        left: 0;
+        margin-bottom: 20px;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .projects-section-container > div:nth-child(2) img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+
+    }
+       /* Adjust specific item styles for smaller screens */
+       .projects-section-container > div:nth-child(3) {
+        width: 100%;
+        left: 0;
+        margin-bottom: 20px;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .projects-section-container > div:nth-child(3) img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+       /* Adjust specific item styles for smaller screens */
+       .projects-section-container > div:nth-child(4) {
+        position: relative;
+        top: 0;
+        width: 100%;
+        left: 0;
+        margin-bottom: 20px;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .projects-section-container > div:nth-child(4) img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        
+    }
+         /* Adjust specific item styles for smaller screens */
+         .projects-section-container > div:nth-child(5) {
+            position: relative;
+            top: 0;
+            width: 100%;
+            left: 0;
+            margin-bottom: 20px;
+            height: auto;
+            max-height: none;
+            overflow: visible;
+        }
+    
+        .projects-section-container > div:nth-child(5) img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            
+        }
+             /* Adjust specific item styles for smaller screens */
+       .projects-section-container > div:nth-child(6) {
+        position: relative;
+        top: 0;
+        width: 100%;
+        left: 0;
+        margin-bottom: 20px;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .projects-section-container > div:nth-child(6) img {
+        width:59%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        
+    }
+       /* Adjust styles for each project item individually */
+       .projects-section-container > div:nth-child(2) img,
+       .projects-section-container > div:nth-child(3) img,
+       .projects-section-container > div:nth-child(4) img,
+       .projects-section-container > div:nth-child(5) img {
+           width: 80%; /* Adjust the width as needed */
+           /* Other styles specific to smaller screens */
+       }
+   
+    .project-item p {
+        display: none;
+    }
+    .project-item  {
+        text-align: center;
+        position: relative;
+    }
+    .underline-container {
+        margin-left: -5rem;
+        justify-content: center; /* Center the underline container */
+    }
+    .projects-section{
+        padding: 30px;
+    }
+    .project-item .btn{
+        font-size: 15px; /* Adjust the font size as needed */
+        padding: 5px 10px; /* Adjust the padding as needed */
+    }
+    #about-me h1 {
+        margin-left: 5rem; /* Remove negative margin for heading */
+      }
+    
+      .line {
+        margin-left: 5rem; /* Remove negative margin for heading */
+      }
+      .left-description {
+        text-align: left;
+        font-weight: 500;
+        font-size: 16px;
+        max-width: 100%;
+        box-sizing: border-box; /* Include padding and border in the element's total width */
+    }
+    .recap {
+       width: 95%;
+
+    }
+    
+}
+
+@media (max-width: 480px) {
+    #modal-content {
+        width: 95%;
+    }
+}
